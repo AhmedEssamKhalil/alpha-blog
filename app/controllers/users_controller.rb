@@ -8,6 +8,12 @@ class UsersController < ApplicationController
         
     end
     
+    def each
+        @user = User.all
+    end
+        
+    end
+    
     
     def create
        @user = User.new(user_params)
@@ -47,12 +53,8 @@ class UsersController < ApplicationController
       @user = User.paginate(page: params[:page], per_page: 5)
     end
   
-end
 
-    def index
-      @user = User.paginate(page: params[:page], per_page: 5)
-    end
-
+   
     private
     def user_params
         params.require(:user).permit(:username, :email, :password)
