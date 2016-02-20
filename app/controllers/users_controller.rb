@@ -5,13 +5,6 @@ class UsersController < ApplicationController
     before_action :require_admin, only: [:destroy]
     def new
         @user = User.new
-        
-    end
-    
-    def each
-        @user = User.all
-    end
-        
     end
     
     
@@ -77,3 +70,5 @@ class UsersController < ApplicationController
             redirect_to root_path
         end
     end
+    
+end
